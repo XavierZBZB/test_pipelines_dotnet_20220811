@@ -2,6 +2,10 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+resources:
+ containers:
+   - container: dotnet_sdk
+     image: mcr.microsoft.com/dotnet/core/sdk:3.0
 
 trigger:
 - master
@@ -10,7 +14,7 @@ pool:
   name: CBS-OnPrem
   vmImage: 'ubuntu-latest'
 
-container: mcr.microsoft.com/dotnet/core/sdk:3.0
+container: dotnet_sdk
 
 steps:
 - task: DotNetCoreCLI@2
