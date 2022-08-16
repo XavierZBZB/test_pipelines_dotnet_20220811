@@ -23,9 +23,12 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*Tests*.csproj'
-
-- task: PublishPipelineArtifact@1
+- task: CopyFiles@2
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: '20220811_test_dotnet'
-    publishLocation: 'pipeline'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
