@@ -5,16 +5,8 @@
 
 
 trigger:
-  batch: true
-  branches:
-    include:
-      - develop
-      - feature/*
-      - release/*
-      - master
-  paths:
-    include:
-      - src
+- master
+
 
 pool:
   name: CBS-OnPrem
