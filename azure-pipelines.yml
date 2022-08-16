@@ -3,8 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 parameters:
-  POOL: CBS-OnPrem
-  POOL_image: ubuntu-latest
+  - name: popo
+    values:
+      - CBS-OnPrem
+  - name: POOL_image
+    values:
+      - ubuntu-latest
+
 
 trigger:
   batch: true
@@ -19,7 +24,7 @@ trigger:
       - src
 
 pool:
-  name: ${{ parameters.POOL }}
+  name: ${{ parameters.popo }}
   vmImage: ${{ parameters.POOL_image }}
 
 
