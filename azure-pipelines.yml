@@ -2,13 +2,6 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-parameters:
-  - name: popo
-    values:
-      - CBS-OnPrem
-  - name: POOL_image
-    values:
-      - ubuntu-latest
 
 
 trigger:
@@ -24,8 +17,8 @@ trigger:
       - src
 
 pool:
-  name: ${{ parameters.popo }}
-  vmImage: ${{ parameters.POOL_image }}
+  name: CBS-OnPrem
+  vmImage: ubuntu-latest
 
 
 
