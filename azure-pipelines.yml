@@ -23,3 +23,9 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*Tests*.csproj'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: '20220811_test_dotnet'
+    publishLocation: 'pipeline'
