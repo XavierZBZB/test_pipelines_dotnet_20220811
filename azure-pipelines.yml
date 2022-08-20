@@ -9,7 +9,7 @@ trigger:
 
 
 pool:
-  name: CBS-OnPrem
+
   vmImage: ubuntu-latest
 
 
