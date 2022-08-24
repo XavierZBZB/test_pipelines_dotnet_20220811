@@ -12,8 +12,6 @@ pool:
 
   vmImage: ubuntu-latest
 
-
-
 steps:
 - task: DotNetCoreCLI@2
   inputs: 
@@ -35,4 +33,6 @@ steps:
 - task: GitTag@6
   inputs:
     workingdir: '$(SYSTEM.DEFAULTWORKINGDIRECTORY)'
+    tagUser: 'XavierZBZB'
+    tagEmail: 'xavier.zheng@consultant.udtrucks.com'
     tag: '$(build.buildNumber)'
